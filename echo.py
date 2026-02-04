@@ -1,13 +1,12 @@
 def echo(text: str, repetitions: int = 3) -> str:
-
     sound = text.split()[-1]
     lines = []
 
-
-    while len(sound) > 0:
+    for _ in range(repetitions):
+        if not sound:
+            break
         lines.append(sound)
         sound = sound[1:]
-
 
     lines.append(".")
     return "\n".join(lines)
